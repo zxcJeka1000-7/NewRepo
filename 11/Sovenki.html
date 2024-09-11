@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="https://sun1-55.userapi.com/s/v1/if1/MkeujupXtTEkyMzMflXKmdYvDydH6Hkx7rxaKEM8eNHyySy7XZ-AP38tyLsZZN8BNDTpnsjL.jpg?size=391x391&quality=96&crop=70,0,391,391&ava=1" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Совы">
+    <meta name="keywords" content="Совы">
+    <title>Совы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Mono&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> <!-- Нестандартный импортируемый шрифт!!! -->
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем файл стилей -->
+    <link rel="stylesheet" href="styles for animals.css"> <!-- Подключаем файл стилей для доп страничек животных -->
+    <style>
+        .container {
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- логотип и панель навигации -->
+        <nav style="margin-top: 2%">
+            <ul>
+                <div class="button7 button a_demo_two">
+                <li><a href="C:\Users\Professional\Desktop\Новая адаптивность\Cathome.html">Главная</a></li>
+                <span class="flare"></span></div><!-- Здесь надо заменить путь к главной-->
+                <div class="button7 button a_demo_two">
+                <li><a href="#">Служба поддержки</a></li>
+                <span class="flare"></span></div>
+                <div class="button7 button a_demo_two">
+                <li><a href="#">Создать объявление</a></li>
+                <span class="flare"></span></div>
+                <div class="button7 button a_demo_two">
+                <li><a href="#" onclick="showRegistrationForm()">Войти</a></li>
+                <span class="flare"></span></div>
+                <li>
+                    <form action="/search" method="get">
+                        <input type="text" name="search" placeholder="Поиск">
+                        <button type="submit">Найти</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <img src="C:\Users\Professional\Desktop\Новая адаптивность\Images\Сова заголовок 1.png" alt="Логотип" class="logo" style="margin-top: 2%">
+        <!-- Форма регистрации -->
+        <div id="registrationForm" class="modal">
+            <h2>Давайте зарегистрируемся!</h2>
+            <form id="registerForm">
+                <label for="fullName">Ваше ФИО:</label>
+                <input type="text" id="fullName" required><br>
+                <label for="phoneNumber">Ваш номер телефона:</label>
+                <input type="tel" id="phoneNumber" required><br>
+                <label for="email">Ваш E-mail:</label>
+                <input type="email" id="email" required><br>
+                <label for="password">Ваш пароль:</label>
+                <input type="password" id="password" required><br>
+                <button type="button" onclick="registerUser()">Зарегистрироваться!</button>
+                <p id="registrationError" style="color: red; display: none;">Пожалуйста, заполните все обязательные поля.</p>
+                <p>Уже зарегистрированы? <a href="#" onclick="showLoginForm()"><br><br>Давайте войдем в аккаунт!</a></p>
+            </form>
+        </div>
+
+        <!-- Форма входа -->
+        <div id="loginForm" class="modal">
+            <h2>Войдите в аккаунт</h2>
+            <form id="loginUser">
+                <label for="loginFullName">Ваше ФИО:</label>
+                <input type="text" id="loginFullName" required><br>
+                <label for="loginPassword">Ваш пароль:</label>
+                <input type="password" id="loginPassword" required><br>
+                <button type="button" onclick="loginUser()">Войти в аккаунт</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="form-container" style="position:absolute;">
+        <div class="search-form">
+            <form>
+                <div class="form-group">
+                    <label for="city1">В каком городе ищем?</label>
+                    <select id="city1" name="city1">
+                        <option value="all">Все города</option>
+                        <option value="moscow">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="chelyab">Челябинск</option>
+                        <option value="omsk">Омск</option>
+                        <option value="spb">Анадырь</option>
+                        <option value="spb">Томск</option>
+                        <option value="spb">Магнитогорск</option>
+                        <option value="spb">Железногорск</option>
+                        <option value="spb">Орск</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pet-type1">Какую ищем породу?</label>
+                    <select id="pet-type1" name="pet-type1">
+                        <option value="all">Любой</option>
+                        <option value="dog">Сипуховые</option>
+                        <option value="cat">Болотная сова</option>
+                        <option value="cat">Ушастая сова</option>
+                        <option value="cat">Сова сыч</option>
+                        <option value="cat">Филины</option>
+                        <option value="cat">Неясыти</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pet-type1">Какого пола?</label>
+                    <select id="pet-type1" name="pet-type1">
+                        <option value="all">Любой</option>
+                        <option value="m">Мальчик</option>
+                        <option value="f">Девочка</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="search-form">
+            <form name="auth" method="post" style="max-width: 100%; font-family: 'Niconne', cursive; font-size: 18px; margin-bottom: 5%; margin-left: -5%; margin-top: 11%;">
+                <div>
+                    <div class="filter_label" style="padding:2%; margin-top:-10%;">Цены:</div>
+                    <input type="number" name="number" placeholder="От:" style="max-width: 50%; font-family: 'Arial'; font-size: 100%; margin:5%;" />
+                    <input type="number" name="number" placeholder="До:" style="max-width: 50%; font-family: 'Arial '; font-size: 100%; margin: 5%;" />
+                </div>
+            </form>
+            <button type="submit">Найти</button>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="pet-ad" data-ad-id="1">
+            <div class="pet-image">
+                <img src="https://cameralabs.org/media/lab15/fevral/25/23_6707f999e8678bb7b41b57d7e1557dd5.jpg" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю питомца - сову</h2>
+                <p class="price">Цена: $100</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая.</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" onclick="openReservationModal()" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="smiley-animation">
+                <!-- Здесь будет SVG с анимацией смайлика -->
+                <svg class="smiley-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="140" height="140">
+
+                    <!-- Туловище -->
+                    <circle cx="75" cy="90" r="36" fill="#fff" stroke="#000" stroke-width="1.5" />
+
+                    <!-- Голова -->
+                    <circle cx="75" cy="65" r="28" fill="#fff" stroke="#000" stroke-width="1.5" />
+
+                    <!-- Левое ухо -->
+                    <path d="M65,50 Q60,47 52,42 Q48,55 65,50" fill="#fff" stroke="#000" stroke-width="1.5" />
+
+                    <!-- Правое ухо -->
+                    <path d="M85,50 Q90,47 98,42 Q102,55 85,50" fill="#fff" stroke="#000" stroke-width="1.5" />
+
+                    <!-- левый глазик -->
+                    <text x="57" y="68" font-size="14" font-weight="300" fill="#000">◕</text>
+
+                    <!-- Группа для глаза -->
+                    <g class="eye-animation" transform="translate(82 67)">
+                        <!-- Символ 1: ◕ (начально видим) -->
+                        <text x="-4" y="0" font-size="14" font-weight="300" fill="#000">◕</text>
+                        <!-- Символ 2: ▂ (начально скрыт) -->
+                        <text x="-2" y="-4" font-size="14" font-weight="300" fill="#000" style="display: none;">▂</text>
+                    </g>
+
+                    <!-- Нос -->
+                    <text x="66" y="76" font-size="13" font-weight="500" fill="#000">▼</text>
+
+
+                    <!-- Левая лапка -->
+                    <path d="M57,124 a8,8 0 0,1 16,0" fill="#fff" stroke="#000" stroke-width="1.5" />
+                    <!-- Правая лапка -->
+                    <path d="M74,124 a8,8 0 0,1 16,0" fill="#fff" stroke="#000" stroke-width="1.5" />
+
+                </svg>
+            </div>
+            <p>Ура! Вы зарезервировали питомца!</p>
+            <button onclick="closeReservationModal()">Закрыть</button>
+        </div>
+    </div>
+    <script>
+        function closeReservationModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+    </script>
+    <script>
+        // Получаем группу с классом eye-animation
+        const eyeGroup = document.querySelector('.eye-animation');
+
+        // Получаем оба символа глаза
+        const symbol1 = eyeGroup.querySelector('text:nth-child(1)'); // ◕
+        const symbol2 = eyeGroup.querySelector('text:nth-child(2)'); // ▂
+
+        // Запускаем анимацию мигания глаза
+        setInterval(() => {
+            // Переключаем видимость символов глаза при помощи CSS класса и анимации
+            symbol1.style.display = 'none';
+            symbol2.style.display = 'block';
+
+            // Через короткую задержку возвращаем начальное состояние
+            setTimeout(() => {
+                symbol1.style.display = 'block';
+                symbol2.style.display = 'none';
+            }, 500); // Длительность видимости каждого символа
+        }, 1800); // Период мигания глаза (1000 миллисекунд = 1 секунда)
+    </script>
+    
+    <div class="container">
+        <div class="pet-ad" data-ad-id="2">
+            <div class="pet-image">
+                <img src="https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663132503_54-mykaleidoscope-ru-p-veselaya-sova-vkontakte-57.jpg" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю умную сову</h2>
+                <p class="price">Цена: 5 000 руб.</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая. С доставкой!</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pet-ad" data-ad-id="3">
+            <div class="pet-image">
+                <img src="https://i.pinimg.com/originals/33/18/d5/3318d5e076ba11fd167ac6ad599c9dbd.jpg" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю питомца - сову</h2>
+                <p class="price">Цена: $100</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая.</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pet-ad" data-ad-id="4">
+            <div class="pet-image">
+                <img src="https://cs4.pikabu.ru/post_img/big/2016/07/28/5/146969016317781175.jpg" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю питомца - сову</h2>
+                <p class="price">Цена: $100</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая.</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pet-ad" data-ad-id="5">
+            <div class="pet-image">
+                <img src="https://64.media.tumblr.com/5b78622617797dec23e5481a384be1e1/tumblr_ooe2jrzYNc1rhe8jbo1_1280.jpg" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю питомца - сову</h2>
+                <p class="price">Цена: $100</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая.</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pet-ad" data-ad-id="6">
+            <div class="pet-image">
+                <img src="https://sun6-23.userapi.com/impg/HU4olPdqfS8V7P2GWc3ym5kEO_DnfJ1B7l0olg/vWktb9efcUs.jpg?size=960x960&quality=95&sign=50c0c78beb49b5cc5b8c07eb589124a5&c_uniq_tag=omL14zFdrNtC2y3mNQX3Od8lbGG8LXnnSAS2z4HnNJc&type=album" alt="Продаю питомца - сову">
+            </div>
+            <div class="pet-details">
+                <h2>Продаю питомца - сову</h2>
+                <p class="price">Цена: $100</p>
+                <p class="description">Прекрасная сова ищет заботливого владельца. Очень дружелюбная и легко обучаемая.</p>
+                <button class="accordion">Основная информация</button>
+                <div class="panel">
+                    <p>Возраст: 1 год</p>
+                    <p>Пол: девочка</p>
+                    <p>Порода: Сова-домовенок</p>
+                </div>
+                <button class="accordion">Подробности</button>
+                <div class="panel">
+                    <p>Требования: прививки есть, главное вовремя кормить, поить и любить! В случае болезни обращаться к ветеринару.</p>
+                    <p>Характеристики: Любит охоту на мышей, спокойная, не требует особого ухода.</p>
+                </div>
+                <button class="reserve-button" onclick="openReservationForm(this)">Зарезервировать</button>
+                <div class="reservation-form" style="display: none;">
+                    <h3>Форма резервации</h3>
+                    <form id="reservationForm" onsubmit="submitReservationForm(this); return false;">
+                        <div class="form-row" style="text-align: center; align-content: center; position: center;">
+                            <label for="meetingDate" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Дата встречи:</label>
+                            <label for="meetingTime" style="text-align: center; align-content: center; position: center; margin-left: 20%; ">Время встречи:</label>
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center;">
+                            <input type="date" id="meetingDate" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                            <input type="time" id="meetingTime" required style="text-align: center; align-content: center; position: center; margin-left: 15%; ">
+                        </div>
+                        <div class="form-row" style="text-align:center; align-content:center; position:center; margin-left:41%;">
+                            <label for="message">Сообщение:</label>
+                        </div>
+                        <div class="form-row" style="text-align: center; align-content: center; position: center; margin-left: 10%;">
+                            <textarea id="message" required style="text-align: center; align-content: center; position: center; margin-left: 0%; margin-right:10%; width: 100%; height: 40%;"></textarea>
+                        </div>
+                        <button type="submit" style="text-align: center; align-content: center; position: center; margin-left: 25%;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <table class="table" align="center">
+                <tr>
+                    <th>Контакты</th>
+                    <th>По всем вопросам</th>
+                </tr>
+                <tr>
+                    <td>
+                        г.Магнитогорск, пр. Ленина, 38<br>
+                        Приют животных "Cathome"
+                    </td>
+                    <td>
+                        Приёмная: +7 800 100-19-34<br>
+                        Объявления: +7 3519 33-09-39
+                    </td>
+                </tr>
+            </table>
+            <p class="copyright">Все права защищены &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

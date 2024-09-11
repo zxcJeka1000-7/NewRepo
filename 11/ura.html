@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+    <form id="registrationForm">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('registrationForm');
+        const usernameField = document.getElementById('username');
+        const passwordField = document.getElementById('password');
+
+        // Загрузка сохраненных данных при загрузке страницы из localStorage и куки
+        const savedUsername = localStorage.getItem('username') || getCookie('username');
+        const savedPassword = localStorage.getItem('password') || getCookie('password');
+        if (savedUsername) {
+            usernameField.value = savedUsername;
+        }
+        if (savedPassword) {
+            passwordField.value = savedPassword;
+        }
+
+        // Сохранение данных в localStorage и куки при изменении полей формы
+        usernameField.addEventListener('input', () => {
+            localStorage.setItem('username', usernameField.value);
+            setCookie('username', usernameField.value, 7); // куки сохраняются на 7 дней
+        });
+
+        passwordField.addEventListener('input', () => {
+            localStorage.setItem('password', passwordField.value);
+            setCookie('password', passwordField.value, 7); // куки сохраняются на 7 дней
+        });
+
+        // Обработка отправки формы
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Регистрация завершена!');
+            // Дополнительные действия по регистрации (например, отправка данных на сервер)
+        });
+    });
+
+    // Функции для работы с куки
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+
+
+</script>
+</body>
+
+</html>

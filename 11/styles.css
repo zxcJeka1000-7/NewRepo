@@ -1,0 +1,1043 @@
+﻿
+@charset "UTF-8";
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #ffeef0;
+    max-width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.flare {
+    position: absolute;
+    top: 0;
+    height: 110%;
+    width: 30%;
+    transform: skewX(-35deg); /* ЭФФЕКТ ПОВОРООТА, НАКЛОННОСТИ БЛЕСКА НА КОНТЕЙНЕРАХ*/
+    left: -50%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.07)); /* ПРОЗРАЧНОСТЬ - ОТ 0.01 ДО 0.07*/
+    animation: flareAnimation 4s infinite linear;
+}
+@keyframes flareAnimation {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.button7 {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0.5px 0.5px #fff;
+    -moz-box-shadow: 0 0.5px 0.5px #fff;
+    box-shadow: 0.5px 0.5px 0 #fff, inset 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-image: linear-gradient(bottom, #666 0%, #ffdde1 50%);
+    border-radius: 0.5px;
+    font-family: 'Niconne', cursive;
+    margin-left: 20px;
+    margin-right: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.a_demo_two {
+    display: inline-block;
+    background-color: #fce3ec;
+    padding: 5px;
+    position: relative;
+    font-family: 'Niconne', cursive;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    background-image: linear-gradient(bottom, #666 0%, #ffdde1 100%);
+    box-shadow: inset 0px 0px 0px #f395b6, 0px 6px 0px #f395b6;
+    border-radius: 5px;
+}
+
+    .a_demo_two:active {
+        display: inline-block;
+        top: 7px;
+        background-image: linear-gradient(bottom, rgb(252,227,236) 100%, rgb(250,209,223) 0%);
+        box-shadow: inset 0px 1px 0px #f395b6, inset 0px -1px 0px #f395b6;
+        color: #f395b6;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+        background: rgb(252,227,236);
+    }
+
+    .a_demo_two::before {
+        display: inline-block;
+        background-color: #f395b6;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-bottom: 4px;
+        left: -2px;
+        top: 5px;
+        z-index: -1;
+        border-radius: 6px;
+        box-shadow: 0px 0px 0px #fff;
+    }
+
+    .a_demo_two:active::before {
+        top: -2px;
+    }
+
+
+
+
+/* Для анимации: */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* CSS-эффект поворота!!!!!!!*/
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header, .menu, .content, .footer, .logo {
+    animation: fadeInUp 1s ease-out;
+}
+
+header {
+    text-align: center; /* !!!! ТЕКСТ ПО ЦЕНТРУ!*/
+    background-color: #f9f9f9; /* Цвет фона шапки */
+    padding: 0px 0; /* Отступы сверху и снизу */
+    background-color: #ffeef0;
+    max-width:100%;
+}
+
+.logo {
+    max-width: 100%; /* Занимает всю ширину родительского элемента (шапки) */
+    height: auto; /* Автоматическая высота */
+    padding: 0px 0
+}
+
+/* для панели навигации:*/
+nav {
+    background-color: #ffeef0;
+    width: 100%;
+    height: auto; /* Устанавливаем высоту контейнера навигации */
+    text-align: left;
+}
+    nav ul {
+        list-style: none; /* Убираем маркеры списка */
+        padding: 0; /* Убираем отступы */
+        margin: 0;
+        align-items: center; /* Выравниваем элементы по вертикали */
+        display: flex; /* Делаем элементы списка флекс-контейнером */
+    }
+    nav li {
+        margin-right: 5px; /* Увеличиваем отступ между вкладками */
+    }
+
+    nav form {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* Перемещаем форму к правому краю */
+    }
+
+    nav input[type="text"] {
+        padding: 5px; /* Уменьшаем внутренние отступы */
+        width: 150px; /* Задаем ширину поля ввода */
+        height: 24px; /* Задаем высоту поля ввода */
+        border-radius: 20px;
+        border: 1px solid #f78eb3;
+        font-size: 16px;
+    }
+
+    nav button {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+        border: 30px;
+        margin: 5px;
+        background-color: #f78eb3;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 70px; 
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-family: 'Niconne', cursive;
+        margin-left: 10px; /* Увеличиваем отступ слева для текста вкладок */
+    }
+
+/* Адаптивность панели навигации:*/
+
+                                 /* МАЛЕНЬКИЕ ЭКРАНЫ*/
+@media (max-width: 376px) {
+    .menu h1 {
+        font-size: 70%;
+    }
+
+    .menu h2 {
+        font-size: 60%;
+    }
+
+    .menu h3 {
+        font-size: 55%;
+    }
+
+    .menu a {
+        font-size: 45%;
+    }
+
+    nav a {
+        font-size: 6px; 
+        margin-left: 5px; 
+    }
+
+    nav input[type="text"] {
+        padding: 2px;
+        width: 120%; 
+        height: 100%;
+        font-size: 7px;
+        margin-left: 10px;
+    }
+
+    nav button {
+        width: 20%;
+        padding: 2px 4px;
+        font-size: 7px;
+        padding: 3px;
+    }
+    .button7 {
+        height: 10px; /* высота кнопки*/
+        width: auto; /* ширина кнопки*/
+        display: inline-block;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0.2px 0.2px #fff;
+        -moz-box-shadow: 0 0.2px 0.2px #fff;
+        box-shadow: 0.1px 0.1px 0 #fff, inset 0 0.1px 0.1px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-image: linear-gradient(bottom, #666 0%, #ffdde1 20%);
+        border-radius: 0.2px;
+        font-family: 'Niconne', cursive;
+        font-size:4px;
+        margin-left: 2px;
+        margin-right:1px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .a_demo_two {
+        display: inline-block;
+        background-color: #fce3ec;
+        padding: 2px; /* вот это отвечает за отступы внутри !! кнопки */
+        position: relative;
+        font-family: 'Niconne', cursive;
+        font-size:3px;
+        text-decoration: none;
+        color: black;
+        background-image: linear-gradient(bottom, #666 0%, #ffdde1 100%);
+        box-shadow: inset 0px 0px 0px #f395b6, 0px 3px 0px #f395b6; /* вот здесь тень от кнопки */
+        border-radius: 3px;
+    }
+
+        .a_demo_two:active {
+            display: inline-block;
+            top: 1px;
+            background-image: linear-gradient(bottom, rgb(252,227,236) 100%, rgb(250,209,223) 0%);
+            box-shadow: inset 0px 0px 0px #f395b6, inset 0px -1px 0px #f395b6;
+            color: #f395b6;
+            text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+            background: rgb(252,227,236);
+        }
+
+        .a_demo_two::before {
+            display: inline-block;
+            background-color: #f395b6;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-left: 2px;
+            padding-right: 2px;
+            padding-bottom: 4px;
+            left: -2px;
+            top: 5px;
+            z-index: -1;
+            border-radius: 6px;
+            box-shadow: 0px 0px 0px #fff;
+        }
+
+        .a_demo_two:active::before {
+            top: -2px;
+        }
+
+}
+@media only screen and (max-width: 480px) {
+    input[type="number"]::placeholder {
+        font-size: 7px; /* Уменьшаем размер шрифта для placeholder */
+    }
+}
+@media only screen and (max-width: 480px) {
+    form[name="auth"] {
+        font-size: 7px; /* Уменьшаем размер шрифта */
+        margin-left: 0; /* Убираем отрицательный отступ слева */
+        margin-top: 0%; /* Уменьшаем отступ сверху */
+    }
+}
+@media (max-width: 376px) {
+    input[type="number"] {
+        font-size: 7px; /* Уменьшаем размер шрифта для мобильных устройств */
+        max-width: 100px; /* Уменьшаем максимальную ширину поля ввода */
+        height: 10px;
+        width:17px;
+
+    }
+}
+
+
+
+
+
+
+                               /* БОЛЬШИЕ ЭКРАНЫ */
+@media (min-width: 377px) {
+    nav a {
+        font-size: 115%; /* Задаем больший размер шрифта */
+    }
+
+    .menu h1 {
+        font-size: 250%;
+    }
+    .menu h2 {
+        font-size: 155%;
+    }
+    .menu h3 {
+        font-size: 135%;
+    }
+    .menu a {
+        font-size: 125%;
+    }
+    nav input[type="text"] {
+        padding: 1%; /* Уменьшаем внутренние отступы */
+        width: 400px; /* Задаем ширину поля ввода */
+        height: 26px;
+        margin:1%;
+    }
+    nab button {
+        width: 30px;
+        padding: 2px 4px;
+        font-size: 500%;
+    }
+   
+}
+                                /* УРА ЭТО МЕНЮ МЕНЮ МЕНЮ */
+.menu {
+    background-image: url( "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666333827_48-mykaleidoscope-ru-p-ottenki-rozovogo-tsveta-oboi-49.jpg");
+    background-size: cover; /* означает, что блок будет закрыт картинкой - конкретно тут надписью "cathome"*/
+    position: relative;
+    max-width: 100%;
+    margin-top: 0.5%; /* расстояние между панелькой навигации и меню*/
+    text-align: center;
+    padding: 2% 2% 2% 2%; /* расстояния между элементами внутри*/
+}
+/* ЭТА ШТУКА ОТВЕЧАЕТ ЗА ШРИФТ В МЕНЮ*/
+.menu-content {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Arial', cursive;
+    text-shadow: 1px 1px 0px #f395b6;
+}
+
+.menu h1, .menu h2, .menu h3 {
+    margin: 1.5%;
+}
+
+.menu nav {
+    margin-top: 2%;
+}
+    .menu a {
+        text-decoration: none;
+        color: white;
+        margin: 0 10px;
+    }
+h1 {
+    font-family: 'Lobster';
+}
+
+.form-container {
+    display: flex;
+    justify-content: center; /* Центрируем формы по горизонтали внутри контейнера */
+    gap: 20px;
+    align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+    flex-wrap: wrap; /* Разрешаем элементам переноситься на новую строку при необходимости */
+}
+
+.search-form {
+    background-color: #ffeef0;
+    padding: 1%;
+    border-radius: 10px;
+    margin-right: 1%;
+    margin-left: 1%;
+    width: 48%; /* Устанавливаем ширину формы */
+    max-width: 250px; /* Максимальная ширина формы */
+}
+
+.form-group {
+    margin-bottom: 5%; /* Расстояние между элементами внутри формы */
+}
+
+label {
+    display: block;
+    font-size: 19px;
+    font-family: 'Niconne', cursive;
+}
+
+select, button {
+    width: 100%;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 17px;
+    margin-top: 5%;
+    
+}
+
+button {
+    background-color: #f78eb3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Niconne', cursive;
+}
+
+    button:hover {
+        background-color: #f6acc6;
+    }
+
+/* Медиа-запрос для мобильных устройств, например, iPhone X */
+@media (max-width: 376px) {
+    .search-form {
+        width: 21%; /* Уменьшаем ширину формы */
+        padding: 1px; /* Уменьшаем отступы внутри формы */
+    }
+
+    select, button {
+        font-size: 25%; /* Уменьшаем размер шрифта */
+    }
+
+    label {
+        display: block;
+        font-size: 25%;
+    }
+    .filter_label{
+        font-size:35%;
+    }
+   
+}
+
+
+@media (min-width:376px) {
+    @media (max-width:1024px) {
+        .search-form {
+            width: 21%; /* Уменьшаем ширину формы */
+            padding: 5px; /* Уменьшаем отступы внутри формы */
+        }
+
+        select, button {
+            font-size: 100%; /* Уменьшаем размер шрифта */
+        }
+
+        label {
+            display: block;
+            font-size: 100%;
+        }
+        nav a {
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        .button7 {
+            height:30px; /* высота кнопки*/
+            width: auto; /* ширина кнопки*/
+            display: inline-block;
+            text-align: center;
+            color: black;
+            cursor: pointer;
+            background-color: #fff;
+            -webkit-box-shadow: 0 0.2px 0.2px #fff;
+            -moz-box-shadow: 0 0.2px 0.2px #fff;
+            box-shadow: 0.1px 0.1px 0 #fff, inset 0 0.1px 0.1px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background-image: linear-gradient(bottom, #666 0%, #ffdde1 20%);
+            border-radius: 0.5px;
+            font-family: 'Niconne', cursive;
+            font-size: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .a_demo_two {
+            display: inline-block;
+            background-color: #fce3ec;
+            padding: 2px; /* вот это отвечает за отступы внутри !! кнопки */
+            position: relative;
+            font-family: 'Niconne', cursive;
+            font-size: 3px;
+            text-decoration: none;
+            color: black;
+            background-image: linear-gradient(bottom, #666 0%, #ffdde1 100%);
+            box-shadow: inset 0px 0px 0px #f395b6, 0px 6px 0px #f395b6; /* вот здесь тень от кнопки */
+            border-radius: 5px;
+        }
+
+            .a_demo_two:active {
+                display: inline-block;
+                top: 2px;
+                background-image: linear-gradient(bottom, rgb(252,227,236) 100%, rgb(250,209,223) 0%);
+                box-shadow: inset 0px 0px 0px #f395b6, inset 0px -3px 0px #f395b6;
+                color: #f395b6;
+                text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+                background: rgb(252,227,236);
+            }
+
+            .a_demo_two::before {
+                display: inline-block;
+                background-color: #f395b6;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding-left: 2px;
+                padding-right: 2px;
+                padding-bottom: 4px;
+                left: -2px;
+                top: 5px;
+                z-index: -1;
+                border-radius: 6px;
+                box-shadow: 0px 0px 0px #fff;
+            }
+
+            .a_demo_two:active::before {
+                top: -2px;
+            }
+
+
+
+
+
+    }
+}
+
+
+
+/* Стили для контейнера с изображениями и подписями */
+.animal-container {
+    display: inline-block;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    margin-top: 3px;
+    padding: 1px;
+    justify-content: flex-start;
+    position: relative;
+    margin-left: 10%;
+}
+
+.animal {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 20%; /* Ширина контейнера с изображением */
+    text-align: center;
+    margin: 0 1%; /* Уменьшаем горизонтальные отступы между контейнерами */
+}
+
+    .animal img {
+        width: 100%; /* Изображение занимает всю ширину контейнера */
+        border-radius: 10px;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5); /* ЭФФЕКТ ТЕНИ!!!!!!!!!!!!!!!!!!! */
+    }
+
+    .animal p {
+        margin-top: 5px; /* Увеличиваем отступ между изображением и подписью */
+        font-size: 20px;
+        font-family: 'Niconne', cursive;
+    }
+
+/* Медиа-запрос для адаптивности */
+@media (max-width: 768px) {
+    .animal {
+        width: 20%; /* Изображения занимают большую ширину на мобильных устройствах */
+        margin-bottom: 5px;
+    }
+    .animal p {
+        margin-top: 1px;
+        padding:1%;
+        font-size: 7px;
+        font-family: 'Niconne', cursive;
+    }
+}
+.table {
+    border-collapse: collapse;
+    width: 27%;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: left;
+    width: 1%;
+}
+
+
+.footer {
+    background-color: #ffdde1;
+    padding: 15px 0; /* Отступы внутри футера */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 3px;
+    margin-top: 3%;
+    opacity: 70%; /* CSS-эффект прозрачность (чем ниже процент - тем прозрачнее) !!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    filter: blur(0.1px); /* CSS-эффект размытие (чем больше др!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    transform: rotate(0deg); /*CSS-эффект поворота!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 600px; /* Максимальная ширина контента футера */
+    margin: 0 auto; /* Центрирование содержимого */
+}
+
+.table {
+    width: 100%;
+    max-width: 90%; /* Ширина таблицы */
+    margin: 0 auto; /* Центрирование таблицы */
+    margin-bottom: 3px; /* Отступ снизу для таблицы */
+}
+
+    .table th, .table td {
+        padding: 5px;
+        font-size: 18px;
+    }
+
+.copyright {
+    font-size: 20px; /* Размер шрифта для текста о правах */
+    margin-bottom: 3px; /* Отступ снизу для таблицы */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 375px) {
+    .footer {
+        margin-bottom: 1%;
+        margin-top: 5%;
+    }
+    .table {
+        max-width: 70%; /* Увеличиваем ширину таблицы на мобильных устройствах */
+        margin-bottom: 1px;
+    }
+
+        .table th, .table td {
+            padding: 1px;
+            font-size: 8px; /* Уменьшаем размер шрифта в таблице на мобильных устройствах */
+        }
+
+    .copyright {
+        font-size: 8px; /* Уменьшаем размер шрифта для текста о правах на мобильных устройствах */
+        margin-bottom: 1px; /* Отступ снизу для таблицы */
+    }
+    .form-container1 {
+        max-width: 50px;
+    }
+    .container1 h2 {
+        font-size: 10px;
+        padding:0px;
+        margin:0px
+    }
+
+}
+/* вот здесь контейнер 1 для кликбейтааааааааааааа мол давайте пройдем тест и посмотрим кто подхоооооооооодит */
+.container1 {
+    text-align: center;
+    color: #ff7baa;
+    text-shadow: 2px 0px 0px white;
+    font-weight: 100;
+    font-family: 'Niconne', cursive;
+    font-size: 18px;
+    padding: 2%;
+    margin-bottom: 0;
+    background-image: linear-gradient(90deg, #ffdbdf 50%, transparent 20% ); /* Градиентный фон */ /* ГРАДИЕЕНТНЫЙ ФОН !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    background-size: 200% 100%;
+    background-position: 100%;
+
+}
+.container1:hover {
+    background-position: 0; /* Сдвиг фона */
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 20px;
+    z-index: 9;
+}
+/* здесь контейнер чисто для области вокруг формочек и вопросиков, вот этот маленький квадратик с самим тестом*/
+.form-container1 {
+    max-width: 400px;
+}
+/* а это поля раскрывающейся формы ответов с да, нет и тд*/
+    .form-container1 select {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+
+    }
+
+.button1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 1px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+    .button1:hover {
+        opacity: 0.8;
+    }
+
+
+
+
+.pet-ad {
+    position: relative; /* Для позиционирования модальных окон относительно контейнера */
+}
+
+.reservation-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    text-align: center;
+
+}
+
+.close {
+    position: center;
+    top: 10%;
+    right: 50%;
+    cursor: pointer;
+    font-size: 50px;
+
+}
+
+.modal-content form {
+    margin-top: 20px;
+
+}
+
+.modal-content button {
+    margin-top: 10px;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.modal {
+    position: relative;
+    top: 10%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffeef0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .modal form {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+.close {
+    position: absolute;
+    top: 10px;
+left:70%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size:20px; 
+}
+@media (max-width: 375px) {
+    .form-container1 select {
+        width: 100%;
+        padding: 3px;
+        margin: 2px 0;
+        box-sizing: border-box;
+        font-size: 8px;
+    }
+    .modal-content h2 {
+        font-size: 12px;
+        margin-top: 3px
+    }
+
+    .modal-content {
+        font-size: 30px;
+    }
+
+    .form-container1 {
+        max-width: 150px;
+    }
+
+    .container1 {
+        text-align: center;
+        color: #ff7baa;
+        text-shadow: 2px 0px 0px white;
+        font-weight: 100;
+        font-family: 'Niconne', cursive;
+        font-size: 18px;
+        padding: 2%;
+        margin-bottom: 0; /* Или установите меньшее значение, например, 3px или 2px */
+        width: auto
+    }
+
+
+    .result-container {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 8px;
+    }
+
+}
+@media (max-width: 375px) {
+    /* Стилизация для мобильных устройств, например, iPhone X */
+
+    /* Изменяем размер шрифта для ответов в селекторах */
+    #walks option,
+    #lifespan option,
+    #size option {
+        font-size: 16px; /* Здесь задайте желаемый размер шрифта */
+    }
+
+        /* Или если нужно изменить только для определенных ответов: */
+        #walks option[value="yes"],
+        #walks option[value="no"],
+        #lifespan option[value="long"],
+        #lifespan option[value="any"],
+        #size option[value="large"],
+        #size option[value="small"] {
+            font-size: 16px; /* Здесь задайте желаемый размер шрифта */
+        }
+}
+@media (max-width: 375px) {
+    /* Стилизация для мобильных устройств, например, iPhone X */
+
+    /* Увеличиваем размер кнопки */
+    .container1 button {
+        font-size: 8px; /* Устанавливаем желаемый размер шрифта */
+        padding: 2px; /* Увеличиваем внутренний отступ */
+    }
+}
+
+
+/* резервируем питомцев*/
+
+.pet-ad {
+    position: relative; /* Для позиционирования модальных окон относительно контейнера */
+}
+.reserve-button {
+    background-color: #fe70a4;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+    .reservation-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reservation-form label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .reservation-form input[type="date"],
+    .reservation-form input[type="time"],
+    .reservation-form input[type="text"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    .reservation-form button {
+        background-color: #fe70a4;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    text-align: center;
+}
+
+    .popup h2 {
+        margin-bottom: 20px;
+    }
+
+    .popup form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .popup label {
+        margin-bottom: 10px;
+    }
+
+    .popup input {
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .popup button {
+        background-color: #fe70a4;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+
+
+/* Стили для сообщения о необходимости регистрации или входа */
+#loginMessage {
+    margin-top: 20px;
+}
+
+    #loginMessage p {
+        font-size: 16px;
+    }
+
+    #loginMessage a {
+        color: #fe70a4;
+        text-decoration: none;
+    }
+
+        #loginMessage a:hover {
+            text-decoration: underline;
+        }
+
+.reservation-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.toggle-password {
+    cursor: pointer;
+    user-select: none;
+    color: #666;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+    .toggle-password:hover {
+        color: #000;
+    }
+
+
+
