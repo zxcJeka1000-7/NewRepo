@@ -645,6 +645,7 @@ td {
     .footer {
         margin-bottom: 1%;
         margin-top: 5%;
+        background-color:#f395b6;
     }
     .table {
         max-width: 70%; /* Увеличиваем ширину таблицы на мобильных устройствах */
