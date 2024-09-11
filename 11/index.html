@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="https://sun1-55.userapi.com/s/v1/if1/MkeujupXtTEkyMzMflXKmdYvDydH6Hkx7rxaKEM8eNHyySy7XZ-AP38tyLsZZN8BNDTpnsjL.jpg?size=391x391&quality=96&crop=70,0,391,391&ava=1" type="image/x-icon"><!-- ФАВИКОН -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Главная" charset="utf-8">
+    <meta name="keywords" content="Главная" charset="utf-8">
+    <title>Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Mono&family=Ubuntu:wght@300&display=swap" rel="stylesheet" charset="utf-8"> <!-- Нестандартный импортируемый шрифт!!! -->
+    <link rel="stylesheet" href="styles.css" charset="utf-8"> <!-- Подключаем файл стилей -->
+    <style>
+        .container h1{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- здесь весь код-->
+    <div id="app">
+        <!-- тут подключаем джава-скрипт ко всему коду-->
+        <header>
+            <!-- логотип и панель навигации:-->
+            <img src="https://sun9-59.userapi.com/impg/ToCyz7WuGUpPkwiVuLPIJjAlNxD-_FMM7SMWkg/y0bS-x3oMK8.jpg?size=2560x232&quality=95&sign=a2a483ecb494d12e6de1d90bb610f2dd&type=album" alt="Логотип" class="logo">
+            <nav>
+                <ul>
+                <div class="button7 button a_demo_two"><li><a href="C:\Users\Professional\Desktop\Новая адаптивность\Cathome.html">Главная</a></li><span class="flare"></span></div><!-- Здесь надо заменить путь к главной-->
+                <div class="button7 button a_demo_two"><li><a href="#">Объявления</a></li><span class="flare"></span></div>
+                <div class="button7 button a_demo_two"><li><a href="#">Поддержка</a></li><span class="flare"></span></div>
+                <div class="button7 button a_demo_two"><li><a href="#" onclick="showRegistrationForm()">Войти</a></li><span class="flare"></span></div>
+    <li>
+        <form action="/search" method="get">
+            <input type="text" name="search" placeholder="Поиск">
+            <button type="submit">Найти</button>
+
+            <button type="submit">Новая кнопка для коммита</button>
+            <button type="submit">Новая кнопка для коммита3</button>
+            <button type="submit">Новая кнопка для коммита4</button>
+            <button type="submit">Новая кнопка для коммита5</button>
+            <button type="submit">Новая кнопка для коммита6</button>
+        </form>
+    </li>
+    </ul>
+    </nav>
+       </header>
+
+    <!-- Меню! -->
+    <div class="menu">
+        <div class="menu-content">
+            <h1>Здесь вы найдете свою семью</h1>
+            <h2>Добро пожаловать!</h2>
+            <h3>Сайт по продаже и покупке домашних животных</h3>
+            <a href="Все животные.html">Все животные</a>
+            <a href="Передать в добрые руки.html">Передать в добрые руки</a>
+            <a href="Оформить заботу о питомце.html">Оформить заботу о питомце</a>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container1" style="margin-bottom:-1%">
+        <h2>Давайте пройдем тест и узнаем, кто Вам подходит!</h2>
+    </div>
+
+
+    <div class="modal" id="petModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePetModal()">&times;</span>
+            <div class="form-container1">
+                <h2>Ответьте на несколько вопросов:</h2>
+                <label for="walks">Любите ли гулять с питомцами?</label>
+                <select id="walks" name="walks">
+                    <option value="yes" > Да</option>
+                    <option value="no"> Нет</option>
+                </select>
+
+                <label for="lifespan">Желаете ли долгоживущего питомца?</label>
+                <select id="lifespan" name="lifespan">
+                    <option value="long"> Да</option>
+                    <option value="any"> Не принципиально</option>
+                </select>
+
+                <label for="size">Ищете большого питомца или маленького?</label>
+                <select id="size" name="size">
+                    <option value="large">Большого</option>
+                    <option value="small">Маленького</option>
+                </select>
+
+                <button type="button1" onclick="showPetResult()">Результат</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeResultModal()">&times;</span>
+            <div class="result-container" id="petResult"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Животные! -->
+    <div class="container">
+        <div class="form-container">
+            <div class="search-form">
+                <form>
+                    <div class="form-group">
+                        <label for="city1">В каком городе ищем?</label>
+                        <select id="city1" name="city1">
+                            <option value="all">Все города</option>
+                            <option value="moscow">Москва</option>
+                            <option value="spb">Санкт-Петербург</option>
+                            <option value="chelyab">Челябинск</option>
+                            <option value="omsk">Омск</option>
+                            <option value="spb">Анадырь</option>
+                            <option value="spb">Томск</option>
+                            <option value="spb">Магнитогорск</option>
+                            <option value="spb">Железногорск</option>
+                            <option value="spb">Орск</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type1">Какого питомца ищем?</label>
+                        <select id="pet-type1" name="pet-type1">
+                            <option value="all">Любой</option>
+                            <option value="dog">Ежи</option>
+                            <option value="cat">Кошки</option>
+                            <option value="cat">Пауки</option>
+                            <option value="cat">Совы</option>
+                            <option value="cat">Капибары</option>
+                            <option value="cat">Собаки</option>
+                            <option value="cat">Хомяки</option>
+                            <option value="cat">Попугаи</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="search-form">
+                <form>
+                    <label for="pet-type1">Какой породы?</label>
+                    <div class="form-group">
+                        <label for="city2"></label>
+                        <select id="city2" name="city2">
+                            <option value="all">Любой</option>
+                            <option value="moscow">Порода1</option>
+                            <option value="spb">Порода2</option>
+                            <option value="spb">Порода3</option>
+                            <option value="spb">Порода4</option>
+                            <option value="spb">Порода5</option>
+                            <option value="spb">Порода6</option>
+                            <!-- Добавьте остальные города по аналогии -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type2">Пол?</label>
+                        <select id="pet-type2" name="pet-type2">
+                            <option value="all">Любой</option>
+                            <option value="dog">Девочка</option>
+                            <option value="cat">Мальчик</option>
+                            <!-- Добавьте остальные виды животных по аналогии -->
+                        </select>
+                    </div>
+                    <button type="submit">Найти</button>
+                </form>
+            </div>
+            <div class="search-form">
+                <form name="auth" method="post" style="max-width: 100%; font-family: 'Niconne', cursive; font-size: 18px; margin-bottom: 5%; margin-left: -5%; margin-top: 11%;">
+                    <div>
+                        <div class="filter_label" style="padding:2%; margin-top:-10%;">Цены:</div>
+                        <input type="number" name="number" placeholder="От:" style="max-width: 50%; font-family: 'Arial'; font-size: 100%; margin:5%;" />
+                        <input type="number" name="number" placeholder="До:" style="max-width: 50%; font-family: 'Arial '; font-size: 100%; margin: 5%;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Общий контейнер для изображений животных -->
+        <div class="animal-container">
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="C:\Users\Professional\Desktop\Новая адаптивность\Eji.html"><img src="https://sun9-80.userapi.com/impg/bnzG4x2ZBeHaewfQk59kxIf4b1jeTIKkw1buWg/O0rEqxhto9c.jpg?size=604x598&quality=95&sign=59113a9637052a2e7f1fffb1aedb96da&c_uniq_tag=HRUG7JIuuJ5VONWB9PfkLxx2Y96-wY7KAlja8oHX4YI&type=album" alt="Ежи"></a></p>
+                <p>Ежи</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="C:\Users\Professional\Desktop\Новая адаптивность\Catenki.html"><img src="https://koshka.top/uploads/posts/2021-11/1637363457_1-koshka-top-p-kanadskii-sfinks-chernii-kotenok-1.png" alt="Кошки"></a></p>
+                <p>Кошки</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="C:\Users\Professional\Desktop\Новая адаптивность\Payki.html"><img src="https://sun6-21.userapi.com/s/v1/ig2/eSV1WFity2wZjae27xUTy1ZtUWl118gBIIPurz_PyuUmogcIp3p6KQ_eSR8RWAjWm897IJ9zaxEmnYUSh4sAKeQf.jpg?size=799x799&quality=96&crop=200,0,799,799&ava=1" alt="Паук"></a></p>
+                <p>Паук</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="C:\Users\Professional\Desktop\Новая адаптивность\Sovenki.html"><img src="https://polinka.top/uploads/posts/2023-06/1686201055_polinka-top-p-malenkie-sovyata-kartinki-krasivo-39.jpg" alt="Совы"></a></p>
+                <p>Совы</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="example.html"><img src="https://sun1-30.userapi.com/s/v1/ig2/Wna0E0P_i9UEQy_FOxPtzMT-Afj0-CuLVq0zSVldiMnDL9Sx2ZeY-0tOGpWNOVH1rVLnmj0bkYSLLtn1MsgKsnQv.jpg?size=1200x1200&quality=95&crop=0,0,1200,1200&ava=1" alt="Капибары"></a></p>
+                <p>Капибары</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="example.html"><img src="https://i.pinimg.com/originals/a3/d5/9b/a3d59b42a2041c99aa5ef6f58b60fc64.jpg" alt="Собаки"></a></p>
+                <p>Собаки</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="example.html"><img src="https://gagaru.club/uploads/posts/2023-02/1676444411_gagaru-club-p-khomyakov-milikh-pinterest-44.jpg" alt="Хомяки"></a></p>
+                <p>Хомяки</p>
+            </div>
+            <div class="animal">
+                <div class="flare"></div>
+                <p><a href="example.html"><img src="https://animals.pibig.info/uploads/posts/2023-04/1680582583_animals-pibig-info-p-milie-popugai-zhivotnie-vkontakte-23.jpg" alt="Попугаи"></a></p>
+                <p>Попугаи</p>
+            </div>
+            <!-- Добавьте другие контейнеры с изображениями и подписями здесь -->
+        </div>
+
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <table class="table" align="center">
+                    <tr>
+                        <th>Контакты</th>
+                        <th>По всем вопросам</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            г.Магнитогорск, пр. Ленина, 38<br>
+                            Приют животных "Cathome"
+                        </td>
+                        <td>
+                            Приёмная: +7 800 100-19-34<br>
+                            Объявления: +7 3519 33-09-39
+                        </td>
+                    </tr>
+                </table>
+                <p class="copyright">Все права защищены &copy; 2024</p>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+    <script src="C:/Users/Professional/Desktop/Лабораторная работа 2 по ИТ/love_cursor.js"></script>
+
+    </div>
+    <script src="scripts.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js" charset="utf-8"></script> <!-- Подключаем Vue.js -->
+    <script src="app.js" charset="utf-8"></script> <!-- Подключаем JavaScript файл -->
+</body>
+</html>
